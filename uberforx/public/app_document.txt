@@ -1,0 +1,2552 @@
+ADMIN PENAL INFORMATION
+===================================================================================
+On admin penal all amount will be only two decimal points.
+
+Dashboard
+-----------------------------------------------------------------------------------
+- admin can add, edit, delete admin users and logout from top drop down menu. 
+- filtering and download report as CSV as filtered data
+- dashboard shows request as last comes first with full detail.
+
+
+Map View
+-----------------------------------------------------------------------------------
+- admin can search for location.
+- admin can see all the Service Providers with Name, Contact number and there status.
+
+
+Drivers
+-----------------------------------------------------------------------------------
+- admin can search/short all the Service Providers and default last registered Service Providers will be displayed at first.
+- admin can edit details of Service Providers.
+- admin can add banking details of Service Providers if admin have selected currency as "United States Dollar" from "Customize" tab.
+- admin can view history of Service Providers.
+- admin can approve/decline Service Providers.
+- admin can delete Service Providers but soft delete so data was in database but will invisible from admin penal.
+- admin can view Service Provider's Documents which are uploaded from Service Provider web penal.
+
+
+Requests
+-----------------------------------------------------------------------------------
+- Admin can search/short all request
+- admin can view the data of request and can view the request in map, and path in map will be same like Service Provider's original root.
+- in detail map view the green flag shows the start point and red flag shows end point and at the bottom of map the request details will be displayed.
+
+
+Users
+-----------------------------------------------------------------------------------
+- Admin can search/short all Users
+- admin can edit details of Users.
+- admin can view history of Users.
+- admin can see the Coupon Details of Users.
+- admin can delete Users but soft delete so data was in database but will invisible from admin penal.
+- user referral code is case sensitive.
+
+
+Reviews 
+-----------------------------------------------------------------------------------
+- Admin can search all Reviews.
+- admin can view all reviews based on Users/Service Providers
+- admin can delete the reviews but rating will not affect because of that.
+
+
+Information Pages
+-----------------------------------------------------------------------------------
+- Admin can search all Information Pages.
+- admin can add Information Pages which will display at app.
+- admin can add, Edit, Delete Information Pages.
+
+
+Driver Types
+-----------------------------------------------------------------------------------
+- Admin can search/sort all Service Providers Types.
+- admin can add Service Providers Types which will display at app.
+- admin can add, Edit Service Providers Types and also make Invisible at app side.
+- admin can add Minimum Fair & Maximum space of type.
+
+
+Documents
+-----------------------------------------------------------------------------------
+- Admin can search all Documents.
+- admin can add Documents which will be submitted from Service Providers web penal.
+- admin can add, Edit, Delete Documents.
+
+
+Promo Codes
+-----------------------------------------------------------------------------------
+- Admin can search/short all Promo Codes.
+- admin can add Promo Codes for users.
+- admin can add, Edit, Deactivate Promo Codes.
+- admin can only add unique promo code (with Amount/Percentage ,Expiry Date, Start Date, Promo Code type (Fixed amount/Percentage), Maximum Usage limit).
+- at edit promo code even new edited code will match with old code then update will fail.
+- Promo Code is case sensitive.
+
+
+Customize
+-----------------------------------------------------------------------------------
+- Admin can change the keywords from Customize tab which will directly affect to the admin penal, app, user penal, provider penal.
+
+
+Payment Details
+-----------------------------------------------------------------------------------
+- Admin can filter payment detail.
+- admin can download the report of payment details.
+
+
+Settings 
+-----------------------------------------------------------------------------------
+- Admin can change the settings of application.
+- admin can change and see the uploaded icons for web. (changed icon will affected after one to two login or page refresh.)
+- admin can change the SMS formate but the string between "%" is used for dynamic change at SMS so take care of it and must don't change it.
+
+Installation Settings 
+
+- admin can change the SMS Configuration.
+- admin can change the Email Configuration.
+- admin can change the Payment Configuration.
+- admin can change the Certificates, keys, urls for app.
+
+
+
+
+
+
+CLIENT APP INFORMATION
+===================================================================================
+- Register
+- login
+- one time referral code
+- get Estimated Fair
+- update profile
+- forgot password
+- change password
+- card add
+- select default card
+- get added cards
+- create request on cash & on card (client can view provider's profile before provider accept request)
+- after creating request set destination any time(change also)
+- apply promotional code after creating request
+- cancel request
+- view invoice.
+- give rating to Service Provider
+- view Documents (uploaded by admin)
+- view history
+- logout
+
+
+
+
+
+
+SERVICE PROVIDER APP INFORMATION
+===================================================================================
+- Register (select type at registration time)
+- login
+- provider can set visibility from settings menu.
+- update profile
+- forgot password
+- change password
+- accept/reject request of client.
+- notify client for starting to go at pick-up point.
+- notify client for arrived at pick-up point.
+- notify client for started the service.
+- notify client for ending the service.
+- view invoice.
+- give rating to client.
+- view Documents (uploaded by admin)
+- view history.
+- logout
+
+
+
+
+
+
+COMMON SERVICES
+===================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+application/pages                                                           (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "informations": [
+        {
+            "id": 1,
+            "title": "Demo Page",
+            "content": "demo content                                              \r\n                                        ",
+            "icon": "http://192.168.0.26/uberforx_new/api/public/uploads/143592434317278.png"
+        }
+    ]
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+application/page/{{page id}}                                                (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "title": "Demo Page",
+    "content": "demo content                                              \r\n                                        ",
+    "icon": "http://192.168.0.26/uberforx_new/api/public/uploads/143592434317278.png"
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+application/types                                                           (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success":true,
+    "types":[
+        {
+            "id":1,
+            "name":"Standard",
+            "min_fare":10,
+            "max_size":"5",
+            "icon":"http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "is_default":1,
+            "price_per_unit_time":1.2,
+            "price_per_unit_distance":4,
+            "base_price":10,
+            "base_distance":1,
+            "currency":"$",
+            "unit":"kms"
+        },
+        {
+            "id":2,
+            "name":"Tuc Tuc",
+            "min_fare":5,
+            "max_size":"3",
+            "icon":"http://192.168.0.26/uberforx_new/api/public/uploads/14326267632854.png",
+            "is_default":0,
+            "price_per_unit_time":2.3,
+            "price_per_unit_distance":3,
+            "base_price":5,
+            "base_distance":2,
+            "currency":"$",
+            "unit":"kms"
+        },
+        {
+            "id":3,
+            "name":"Moto Taxi",
+            "min_fare":12,
+            "max_size":"1",
+            "icon":"http://192.168.0.26/uberforx_new/api/public/uploads/143262678315319.png",
+            "is_default":0,
+            "price_per_unit_time":3.4,
+            "price_per_unit_distance":2,
+            "base_price":12,
+            "base_distance":3,
+            "currency":"$",
+            "unit":"kms"
+        },
+        {
+            "id":4,
+            "name":"Bus 8 Pax",
+            "min_fare":5,
+            "max_size":"24",
+            "icon":"http://192.168.0.26/uberforx_new/api/public/uploads/143280976718595.png",
+            "is_default":0,
+            "price_per_unit_time":4.1,
+            "price_per_unit_distance":1,
+            "base_price":5,
+            "base_distance":4,
+            "currency":"$",
+            "unit":"kms"
+        }
+    ]
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+application/forgot-password                                                 (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+type            1=service provider, 0 = Client                          (REQUIRED)
+email           registered email                                        (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+}
+
+
+
+
+
+
+
+CLIENT APP RESPONSES
+===================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/register                                                               (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+first_name              first name                                      (REQUIRED)
+last_name               last name                                       (REQUIRED)
+email                   email						(REQUIRED)
+phone                   contact number					(REQUIRED)
+password                password(if manual login)			(REQUIRED)
+picture                 multi part image
+device_token            device token                                    (REQUIRED)
+device_type             android,ios					(REQUIRED)
+bio                     bio
+address                 address
+state                   state
+country                 country
+zipcode                 zip code
+social_unique_id        social unique id if login by is not manual
+login_by                manual,facebook,google                          (REQUIRED)			
+timezone                device time zone
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 6,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919876543210",
+    "email": "tirthrajsinh108@live.com",
+    "picture": "",
+    "bio": "my bio",
+    "address": "My Address",
+    "state": "Gujata",
+    "country": "India",
+    "zipcode": "3603311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "device token",
+    "device_type": "android",
+    "timezone": "UTC",
+    "token": "2y10K0FEYHI2TCKNXdPGF0ex1ex4uNeMyun92banw0J5plUH91SJT4vCm",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 0,
+    "is_referral_active": "1",
+    "is_referral_active_txt": "referral on",
+    "is_promo_active": "1",
+    "is_promo_active_txt": "promo on"
+}
+{
+    "success": false,
+    "error": "Email ID already Registred",
+    "error_code": 402
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/login                                                                  (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+email                   email                                           (REQUIRED)
+password                password(if manual login)			(REQUIRED)
+device_token            device token					(REQUIRED)
+device_type             android,ios					(REQUIRED)
+login_by                manual,facebook,google				(REQUIRED)	
+social_unique_id        social unique id if login by is not manual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 6,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919876543210",
+    "email": "tirthrajsinh108@live.com",
+    "picture": "",
+    "bio": "my bio",
+    "address": "My Address",
+    "state": "Gujata",
+    "country": "India",
+    "zipcode": "3603311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "device token",
+    "device_type": "android",
+    "timezone": "UTC",
+    "token": "2y10y0tPcsmz8f242fQrIA59cml5TvIth1mVAqPAIVg0N7xIZkZu",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 0,
+    "is_referral_active": "1",
+    "is_referral_active_txt": "referral on",
+    "is_promo_active": "1",
+    "is_promo_active_txt": "promo on"
+}
+{
+    "success": false,
+    "error": "Not a Registered User",
+    "error_code": 404
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/addcardtoken                                                           (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+last_four           card last four digits				(REQUIRED)
+payment_token       card token						(REQUIRED)
+card_type           VISA,SMART etc...
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "payments": [
+        {
+            "is_default_text": "default",
+            "id": 5,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnKNeo4oaRMn",
+            "last_four": "4242",
+            "card_token": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "card_type": "VISA",
+            "card_id": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "is_default": 1
+        },
+        {
+            "is_default_text": "not_default",
+            "id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "card_id": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "is_default": 0
+        }
+    ]
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/cards                                                                  (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "payments": [
+        {
+            "is_default_text": "default",
+            "id": 5,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnKNeo4oaRMn",
+            "last_four": "4242",
+            "card_token": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "card_type": "VISA",
+            "card_id": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "is_default": 1
+        },
+        {
+            "is_default_text": "not_default",
+            "id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "card_id": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "is_default": 0
+        }
+    ]
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/history                                                                (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+from_date           2015-06-29                                          (OPTIONAL)
+to_date             2015-07-01                                          (OPTIONAL)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "requests": [
+        {
+            "start_lat": 22.3022246,
+            "start_long": 70.7969174,
+            "end_lat": 22.3022285,
+            "end_long": 70.7969169,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022246,70.7969174&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022285,70.7969169&path=color:0x2dbae4ff|weight:4|22.3022246,70.7969174|22.3022246,70.7969174|22.3022246,70.7969174|22.3022249,70.7969181|22.3022249,70.7969181|22.3022249,70.7969181|22.3022247,70.7969183|22.3022247,70.7969183|22.3022245,70.796919|22.3022245,70.796919|22.3022245,70.796919|22.3022245,70.796919|22.3022245,70.796919|22.3022244,70.7969198|22.3022244,70.7969198|22.3022244,70.7969198|22.3022244,70.7969198|22.3022244,70.7969198|22.3022244,70.7969203|22.3022244,70.7969203|22.3022245,70.796921|22.3022245,70.796921|22.3022245,70.796921|22.3022252,70.7969204|22.3022252,70.7969204|22.3022252,70.7969204|22.3022257,70.7969198|22.3022252,70.7969204|22.3022257,70.7969198|22.3022257,70.7969198|22.3022257,70.7969198|22.3022257,70.796919|22.3022257,70.796919|22.3022257,70.796919|22.3022264,70.7969186|22.3022264,70.7969186|22.3022264,70.7969186|22.3022264,70.7969186|22.3022272,70.7969179|22.3022272,70.7969179|22.3022272,70.7969179|22.3022278,70.7969175|22.3022278,70.7969175|22.3022278,70.7969175|22.3022285,70.7969169|22.3022285,70.7969169|22.3022285,70.7969169",
+            "id": 6,
+            "date": "2015-07-01 11:56:31",
+            "distance": "0.00",
+            "unit": "kms",
+            "time": 0.15999999642372,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 7,
+            "actual_total": 13,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 4,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10,
+            "referral_bonus": 3,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022287,
+            "start_long": 70.7969436,
+            "end_lat": 22.3022255,
+            "end_long": 70.7969444,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022287,70.7969436&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022255,70.7969444&path=color:0x2dbae4ff|weight:4|22.3022287,70.7969436|22.3022288,70.7969426|22.302228,70.7969414|22.3022259,70.7969463|22.3022258,70.7969462|22.3022258,70.7969462|22.3022258,70.7969462|22.3022257,70.796946|22.3022257,70.796946|22.3022257,70.796946|22.3022257,70.796946|22.3022257,70.796946|22.3022259,70.7969452|22.3022259,70.7969452|22.3022259,70.7969452|22.3022259,70.7969452|22.3022256,70.7969446|22.3022255,70.7969444",
+            "id": 7,
+            "date": "2015-07-01 12:22:25",
+            "distance": "0.00",
+            "unit": "kms",
+            "time": 0.20000000298023,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0.0099999997764826,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10.010000228882,
+            "actual_total": 10.010000228882,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 3,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10.010000228882,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022262,
+            "start_long": 70.796943,
+            "end_lat": 21.9619463,
+            "end_long": 70.792297,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022262,70.796943&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|21.9619463,70.792297&path=color:0x2dbae4ff|weight:4|22.3022262,70.796943|22.3022262,70.7969428|22.3022262,70.7969426|22.3022261,70.7969426|22.3022262,70.7969426|22.3022261,70.7969426|22.3022261,70.7969423|22.302226,70.7969421|22.3022258,70.7969419|22.3022257,70.7969418|22.3022257,70.7969416|22.3022256,70.7969416|22.3022254,70.7969416|22.3022252,70.7969418|22.3022251,70.7969418|22.3022252,70.7969414|22.3022252,70.7969412|22.3022251,70.796941|22.3022251,70.796941|22.3022249,70.7969409|22.3022249,70.7969409|22.3022248,70.7969408|22.3022248,70.7969408|22.3022249,70.7969407|22.3022249,70.7969407|22.3022251,70.7969406|22.3022251,70.7969406|22.3022252,70.7969406|22.3022254,70.7969404|22.3022253,70.7969403|22.3022253,70.7969402|22.3022253,70.7969402|22.3022252,70.79694|22.3022252,70.79694|22.302225,70.7969396|22.302225,70.7969396|22.3022249,70.7969394|22.3022249,70.7969394|22.302225,70.7969393|22.302225,70.7969393|22.302225,70.7969393|22.302225,70.7969393|22.3022251,70.7969393|22.3022251,70.7969393|22.3022251,70.7969393|22.3022251,70.7969392|22.3022251,70.7969393|22.3022253,70.7969389|22.3022256,70.7969386|22.3022259,70.7969384|22.3022259,70.7969385|22.3022259,70.7969385|22.3022259,70.7969385|22.3022259,70.7969386|22.3022258,70.7969386|22.302226,70.7969383|22.302226,70.7969383|22.3022262,70.796938|22.3022262,70.796938|22.3022264,70.7969377|22.3022266,70.7969375|22.3022268,70.7969372|22.3022267,70.7969372|22.3022267,70.7969372|22.3022267,70.7969372|22.3022267,70.7969371|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022265,70.796937|22.3022265,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022266,70.796937|22.3022265,70.7969369|22.3022265,70.7969369|22.3022265,70.7969369|22.3022265,70.7969369|22.3022265,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022265,70.7969369|22.3022265,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022266,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|21.9619463,70.792297|22.3022268,70.7969369|22.3022268,70.7969369|22.3022268,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|22.3022267,70.7969369|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.7969371|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969373|22.3022268,70.7969373|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969372|22.3022268,70.7969371|22.3022268,70.7969371|22.3022268,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.796937|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022267,70.7969371|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969372|22.3022266,70.7969371|22.3022266,70.7969371|22.3022266,70.7969371|22.3022266,70.7969371|22.3022266,70.7969371|22.3022266,70.7969371|22.3022265,70.796937|22.3022265,70.796937|22.3022265,70.796937|22.3022265,70.796937|22.3022265,70.796937|22.3022265,70.796937|22.3022265,70.7969369|22.3022265,70.7969369|22.3022264,70.7969369|22.3022264,70.7969369|22.3022264,70.7969369|21.9619463,70.792297|21.9619463,70.792297|21.9619463,70.792297|22.3022195,70.7968758|22.3022195,70.7968758|22.3022143,70.7968928|22.3022126,70.7968997|22.3022126,70.7968997|22.3022136,70.7969025|22.3022176,70.7969039|22.3022189,70.7969039|22.3022211,70.7969043|22.3022216,70.7969035|22.3022217,70.7969038|22.3022219,70.7969042|22.3022216,70.7969052|22.3022212,70.796905|22.3022207,70.7969048|22.3022205,70.7969033|22.3022204,70.7969014|22.3022202,70.7968998|22.3022202,70.7968998|22.3022202,70.7968998|22.3022204,70.7968999|22.3022204,70.7968999|22.3022204,70.7968999|22.30222,70.7969006|22.3022198,70.796901|22.3022198,70.7969013|22.3022196,70.7969021|22.3022196,70.7969024|22.3022196,70.7969024|22.3022195,70.7969027|22.3022192,70.7969025|22.3022192,70.7969025|22.3022178,70.796896|22.3022178,70.796896|22.3022178,70.796895|22.302218,70.7968959|22.302218,70.7968959|22.302218,70.7968964|22.3022178,70.7968965|22.3022178,70.7968965|22.302218,70.7968965|22.302218,70.7968965|22.302218,70.7968965|22.3022181,70.7969|22.3022182,70.7969032|22.3022181,70.7969063|22.302218,70.7969085|22.302218,70.7969085|22.302218,70.7969085|22.3022183,70.7969083|22.3022185,70.7969084|22.3022185,70.7969084|22.3022185,70.7969084|22.3022185,70.7969084|22.3022185,70.7969083|22.3022187,70.7969083|22.3022187,70.7969083|22.3022095,70.7968868|22.3022278,70.7968921|22.3022262,70.7969081|22.3022244,70.7969144|21.9619463,70.792297",
+            "id": 8,
+            "date": "2015-07-01 12:24:19",
+            "distance": "5.00",
+            "unit": "kms",
+            "time": 51.650001525879,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 50,
+            "time_cost": 413.20001220703,
+            "setbase_distance": 1,
+            "total": 473.20001220703,
+            "actual_total": 473.20001220703,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 4,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 473.20001220703,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3021827,
+            "start_long": 70.796955,
+            "end_lat": 22.3022,
+            "end_long": 70.7969385,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3021827,70.796955&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022,70.7969385&path=color:0x2dbae4ff|weight:4|22.3021827,70.796955|22.3021827,70.796955|22.3021827,70.796955|22.3021835,70.7969543|22.3021835,70.7969543|22.3021835,70.7969543|22.3021843,70.7969531|22.3021853,70.7969526|22.3021767,70.796947|22.3021777,70.7969467|22.3021787,70.7969461|22.3021787,70.7969461|22.3021816,70.7969446|22.3021816,70.7969446|22.3021825,70.7969442|22.3021825,70.7969442|22.3021825,70.7969442|22.3021825,70.7969442|22.3021789,70.7969411|22.3021789,70.7969411|22.3021789,70.7969411|22.3021623,70.7969528|22.3021623,70.7969528|22.3021635,70.7969525|22.3021635,70.7969525|22.3021646,70.796952|22.302166,70.7969515|22.3021781,70.7969464|22.3021844,70.796944|22.3021853,70.7969442|22.3021853,70.7969442|22.3021802,70.7969348|22.3021901,70.7969342|22.3021901,70.7969342|22.3021909,70.7969411|22.3021901,70.7969342|22.3021909,70.7969411|22.3021947,70.7969412|22.3021947,70.7969412|22.3021975,70.7969408|22.3021975,70.7969408|22.3021975,70.7969408|22.3021996,70.7969397|22.3021996,70.7969397|22.302202,70.7969387|22.302203,70.7969377|22.302203,70.7969377|22.3022032,70.7969366|22.3022032,70.7969366|22.3022041,70.7969355|22.3022041,70.7969355|22.3021982,70.7969398|22.3021982,70.7969398|22.3021992,70.7969391|22.3021992,70.7969391|22.3022,70.7969385",
+            "id": 9,
+            "date": "2015-07-02 06:45:50",
+            "distance": "0.01",
+            "unit": "kms",
+            "time": 1.6499999761581,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0.079999998211861,
+            "time_cost": 5.4400000572205,
+            "setbase_distance": 1,
+            "total": 15.520000457764,
+            "actual_total": 15.520000457764,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 5,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 15.520000457764,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022081,
+            "start_long": 70.7969384,
+            "end_lat": 22.3022118,
+            "end_long": 70.7969522,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022081,70.7969384&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022118,70.7969522&path=color:0x2dbae4ff|weight:4|22.3022081,70.7969384|22.3022081,70.7969384|22.3022081,70.7969384|22.3022086,70.7969378|22.3022086,70.7969378|22.3022086,70.7969378|22.3022091,70.7969376|22.3022091,70.7969376|22.3022091,70.7969376|22.3022094,70.7969366|22.3022094,70.7969366|22.3022094,70.7969366|22.3022097,70.7969365|22.3022097,70.7969365|22.3022101,70.7969364|22.3022097,70.7969365|22.3022101,70.7969364|22.3022101,70.7969364|22.3022114,70.7969477|22.3022114,70.7969477|22.3022119,70.7969473|22.3022119,70.7969473|22.3022119,70.7969473|22.3022118,70.7969522|22.3022118,70.7969522",
+            "id": 10,
+            "date": "2015-07-02 06:52:40",
+            "distance": "0.01",
+            "unit": "kms",
+            "time": 0,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0.12999999523163,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10.130000114441,
+            "actual_total": 10.130000114441,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 5,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10.130000114441,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022222,
+            "start_long": 70.796875,
+            "end_lat": 22.3022243,
+            "end_long": 70.7968916,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022222,70.796875&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022243,70.7968916&path=color:0x2dbae4ff|weight:4|22.3022222,70.796875|22.3022223,70.7968785|22.3022223,70.7968785|22.3022223,70.7968785|22.302222,70.7968809|22.302222,70.7968809|22.302222,70.7968841|22.302222,70.7968841|22.3022219,70.7968859|22.3022219,70.7968859|22.3022219,70.7968859|22.3022219,70.7968859|22.3022224,70.7968864|22.3022231,70.7968869|22.3022231,70.7968869|22.3022231,70.7968869|22.3022237,70.7968875|22.3022237,70.7968875|22.3022237,70.7968875|22.3022231,70.7968869|22.3022243,70.7968879|22.3022243,70.7968879|22.3022243,70.7968899|22.3022243,70.7968899|22.3022243,70.7968916|22.3022243,70.7968916|22.3022243,70.7968916",
+            "id": 11,
+            "date": "2015-07-02 06:58:11",
+            "distance": "0.01",
+            "unit": "kms",
+            "time": 0,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0.12999999523163,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10.130000114441,
+            "actual_total": 10.130000114441,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 4,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10.130000114441,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022277,
+            "start_long": 70.796916,
+            "end_lat": 22.302254,
+            "end_long": 70.7969193,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022277,70.796916&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.302254,70.7969193&path=color:0x2dbae4ff|weight:4|22.3022277,70.796916|22.3022372,70.796912|22.3022277,70.796916|22.3022372,70.796912|22.3022439,70.7969061|22.3022439,70.7969061|22.3022416,70.7969066|22.3022416,70.7969066|22.3022416,70.7969066|22.3022409,70.7969084|22.3022409,70.7969084|22.3022409,70.7969084|22.3022409,70.7969084|22.3022401,70.7969092|22.3022401,70.7969092|22.3022394,70.7969155|22.3022394,70.7969155|22.3022394,70.7969155|22.3022394,70.7969155|22.3022394,70.7969155|22.3022388,70.7969166|22.3022388,70.7969166|22.3022388,70.7969166|22.3022377,70.796917|22.3022377,70.796917|22.3022391,70.7969164|22.3022496,70.7969125|22.3022524,70.7969178|22.3022524,70.7969178|22.3022576,70.7969199|22.3022576,70.7969199|22.3022545,70.7969218|22.3022545,70.7969218|22.3022545,70.7969218|22.3022518,70.7969228|22.3022502,70.7969185|22.3022502,70.7969185|22.3022481,70.7969151|22.3022481,70.7969151|22.3022434,70.796914|22.3022434,70.796914|22.3022434,70.796914|22.3022422,70.7969155|22.3022422,70.7969155|22.3022422,70.7969155|22.3022422,70.7969155|22.3022422,70.7969155|22.3022365,70.7969187|22.3022365,70.7969187|22.3022365,70.7969187|22.3022331,70.7969226|22.3022331,70.7969226|22.3022331,70.7969226|22.3022188,70.7969294|22.3022188,70.7969294|22.3022163,70.7969272|22.3022163,70.7969272|22.3022104,70.7969214|22.3022104,70.7969214|22.3022134,70.7969217|22.3022387,70.7969282|22.3022387,70.7969282|22.3022387,70.7969282|22.3022532,70.7969195|22.3022532,70.7969195|22.3022532,70.7969195|22.302254,70.7969193|22.302254,70.7969193|22.302254,70.7969193|22.302254,70.7969193",
+            "id": 12,
+            "date": "2015-07-02 08:47:08",
+            "distance": "0.01",
+            "unit": "kms",
+            "time": 1.4099999666214,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0.090000003576279,
+            "time_cost": 4.8000001907349,
+            "setbase_distance": 1,
+            "total": 14.890000343323,
+            "actual_total": 14.890000343323,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 4,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 14.890000343323,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022117,
+            "start_long": 70.7969438,
+            "end_lat": 22.3022169,
+            "end_long": 70.7969596,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022117,70.7969438&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022169,70.7969596&path=color:0x2dbae4ff|weight:4|22.3022117,70.7969438|22.3022169,70.7969596",
+            "id": 13,
+            "date": "2015-07-02 09:08:16",
+            "distance": "0.00",
+            "unit": "kms",
+            "time": 0,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10,
+            "actual_total": 10,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 5,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022213,
+            "start_long": 70.7969282,
+            "end_lat": 22.3022228,
+            "end_long": 70.7969289,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022213,70.7969282&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022228,70.7969289&path=color:0x2dbae4ff|weight:4|22.3022213,70.7969282|22.3022216,70.7969267|22.3022216,70.7969267|22.3022216,70.7969265|22.3022214,70.7969262|22.3022213,70.7969258|22.3022216,70.7969265|22.3022212,70.7969256|22.3022211,70.7969254|22.3022209,70.7969251|22.3022178,70.7969294|22.3022177,70.7969294|22.3022177,70.7969294|22.3022211,70.7969254|22.3022181,70.796929|22.3022181,70.7969289|22.3022182,70.796929|22.3022182,70.796929|22.3022182,70.796929|22.3022182,70.796929|22.3022182,70.796929|22.3022233,70.7969302|22.3022233,70.7969302|22.3022233,70.7969303|22.3022233,70.7969303|22.3022233,70.7969303|22.3022233,70.7969303|22.3022231,70.7969302|22.302223,70.7969301|22.302223,70.7969297|22.302223,70.7969292|22.302223,70.7969292|22.3022228,70.7969289|22.3022228,70.7969289",
+            "id": 15,
+            "date": "2015-07-02 10:23:33",
+            "distance": "0.00",
+            "unit": "kms",
+            "time": 0.95999997854233,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10,
+            "actual_total": 10,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 4,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        },
+        {
+            "start_lat": 22.3022111,
+            "start_long": 70.7968921,
+            "end_lat": 22.3022121,
+            "end_long": 70.7968922,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|22.3022111,70.7968921&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|22.3022121,70.7968922&path=color:0x2dbae4ff|weight:4|22.3022111,70.7968921|22.3022121,70.7968922",
+            "id": 16,
+            "date": "2015-07-03 11:40:45",
+            "distance": "0.00",
+            "unit": "kms",
+            "time": 0,
+            "promo_discount": 0,
+            "base_price": 10,
+            "distance_cost": 0,
+            "time_cost": 0,
+            "setbase_distance": 1,
+            "total": 10,
+            "actual_total": 10,
+            "type": "Standard",
+            "type_icon": "http://192.168.0.26/uberforx_new/api/public/uploads/14328093212653.png",
+            "walker": {
+                "rating": 3,
+                "first_name": "Hardik",
+                "last_name": "Patel",
+                "phone": "+1123456",
+                "email": "hbhalodi@elluminati.in",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/e687ee0e123871871c35fffb80650d201302378e.jpg",
+                "bio": "",
+                "type": "Standard"
+            },
+            "main_total": 10,
+            "referral_bonus": 0,
+            "promo_bonus": 0,
+            "payment_type": 0,
+            "is_paid": 1,
+            "promo_id": 0,
+            "promo_code": "",
+            "currency": "$"
+        }
+    ]
+}
+{
+    "success": true,
+    "requests": []
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/logout                                                                 (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "error": "Successfully Log-Out"
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/createrequest                                                          (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+latitude            source latitude                                     (REQUIRED)
+longitude           source longitude                                    (REQUIRED)
+d_latitude          destination latitude (default 0)
+d_longitude         destination longitude (default 0)
+type                service type (default is admin side default type)
+payment_mode        0=card, 1=cash (default 0)                                      
+promo_code          promotional code (if available)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "unique_id": 1,
+    "is_referral_active": "1",
+    "is_referral_active_txt": "referral on",
+    "is_promo_active": "1",
+    "is_promo_active_txt": "promo on",
+    "request_id": 17,
+    "walker": {
+        "unique_id": 1,
+        "id": "1",
+        "first_name": "Tirthrajsinh",
+        "last_name": "Parmar",
+        "phone": "+919876543210",
+        "picture": "",
+        "bio": "",
+        "latitude": "1",
+        "longitude": "2",
+        "type": "1",
+        "car_model": "0",
+        "car_number": "0",
+        "rating": 0,
+        "num_rating": 0
+    }
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/getrequestlocation                                                     (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "latitude": 1,
+    "longitude": 2,
+    "bearing": 4439.63828765,
+    "distance": "0",
+    "time": 0,
+    "unit": "kms"
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/getrequest                                                             (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "unique_id": 1,
+    "status": 1,
+    "is_referral_active": "1",
+    "is_referral_active_txt": "referral on",
+    "is_promo_active": "1",
+    "is_promo_active_txt": "promo on",
+    "confirmed_walker": 1,
+    "is_walker_started": 0,
+    "is_walker_arrived": 0,
+    "is_walk_started": 0,
+    "is_completed": 0,
+    "is_walker_rated": 0,
+    "is_cancelled": 0,
+    "dest_latitude": 2,
+    "dest_longitude": 1,
+    "promo_id": 1,
+    "promo_code": "1234",
+    "walker": {
+        "unique_id": 1,
+        "id": 1,
+        "first_name": "Tirthrajsinh",
+        "last_name": "Parmar",
+        "phone": "+919876543210",
+        "bio": "",
+        "picture": "",
+        "latitude": 1,
+        "longitude": 2,
+        "d_latitude": 2,
+        "d_longitude": 1,
+        "type": 1,
+        "rating": 0,
+        "num_rating": 0,
+        "car_model": "0",
+        "car_number": "0",
+        "bearing": 4439.63828765
+    },
+    "time": 0,
+    "bill": {
+        "type": [
+            {
+                "name": "Standard",
+                "price": 0
+            }
+        ]
+    },
+    "owner": {
+        "owner_lat": 1,
+        "owner_long": 2,
+        "owner_dist_lat": 2,
+        "owner_dist_long": 1,
+        "payment_type": 1,
+        "default_card": 5,
+        "dest_latitude": 2,
+        "dest_longitude": 1,
+        "referral_code": "x4e$QP",
+        "is_referee": 0,
+        "promo_count": 1
+    },
+    "card_details": {
+        "is_default_text": "default",
+        "card_id": 5,
+        "owner_id": 6,
+        "customer_id": "cus_6YZnKNeo4oaRMn",
+        "last_four": "4242",
+        "card_token": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+        "card_type": "VISA",
+        "is_default": 1
+    },
+    "charge_details": {
+        "unit": "kms",
+        "base_distance": 1,
+        "base_price": 10,
+        "distance_price": 4,
+        "price_per_unit_time": 1.2,
+        "total": 0,
+        "is_paid": 0
+    },
+    "accepted_time": "2015-07-06 12:37:55"
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/requestinprogress                                                      (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "request_id": 17,
+    "success": true
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/cancelrequest                                                          (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/setdestination                                                         (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
+dest_lat            destination latitude                                (REQUIRED)
+dest_long           destination longitude                               (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "error": "Destination Set Successfully"
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/update                                                                 (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+new_password        new password
+old_password        old password
+first_name          first name
+last_name           last name
+phone               contact number
+picture             user multi-part image
+bio                 bio
+address             address
+state               state
+country             country
+zipcode             zip-code
+timezone            timezone like UTC,Asia/Kolkata, etc
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 6,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthrajsinh108@live.com",
+    "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+    "bio": "my new bio",
+    "address": "Gondal city",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "timezone": "Asia/Kolkata",
+    "token": "2y10y0tPcsmz8f242fQrIA59cml5TvIth1mVAqPAIVg0N7xIZkZu",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 0,
+    "is_referral_active": "1",
+    "is_referral_active_txt": "referral on",
+    "is_promo_active": "1",
+    "is_promo_active_txt": "promo on"
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/requestpath                                                            (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "locationdata": [
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0,
+            "bearing": 0.00000977,
+            "timestamp": {
+                "date": "2015-07-06 10:28:32",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000012,
+            "longitude": 2.0000012,
+            "distance": 0.000016000000759959,
+            "bearing": 0.00000977,
+            "timestamp": {
+                "date": "2015-07-06 10:34:47",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0001012,
+            "longitude": 2.0001012,
+            "distance": 0.015737000465393,
+            "bearing": 0.00977051,
+            "timestamp": {
+                "date": "2015-07-06 10:35:23",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0002012,
+            "longitude": 2.0002012,
+            "distance": 0.031458000183105,
+            "bearing": 0.00977051,
+            "timestamp": {
+                "date": "2015-07-06 10:35:38",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0012012,
+            "longitude": 2.0012012,
+            "distance": 0.18866600036621,
+            "bearing": 0.09770512,
+            "timestamp": {
+                "date": "2015-07-06 10:35:48",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0.97705038,
+            "timestamp": {
+                "date": "2015-07-06 10:35:59",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:36:48",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:43:47",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 1.0943063,
+            "timestamp": {
+                "date": "2015-07-06 10:46:56",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:51:01",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:51:35",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/apply-referral                                                         (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+is_skip             1= skip, 0= refer                                   (REQUIRED)
+id                  user id                                             (REQUIRED)
+token               user token                                          (REQUIRED)
+referral_code       other user's referral code.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TRUE successfully apply referral code.
+{
+    "success": true,
+    "error": "Referral process successfully completed.",
+    "id": 5,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj1@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10ZZrVANR8zXaOMF1AEWbVeV2kPtOW1YAhyHrf7dg85o0XwsBcjpZ",
+    "referral_code": "TN0000000005",
+    "is_referee": 1,
+    "promo_count": 1
+}
+
+TRUE if you have cancel for the referral process.
+{
+    "success": true,
+    "error": "You have skipped for referral process",
+    "id": 5,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj1@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10ZZrVANR8zXaOMF1AEWbVeV2kPtOW1YAhyHrf7dg85o0XwsBcjpZ",
+    "referral_code": "TN0000000005",
+    "is_referee": 1,
+    "promo_count": 1
+}
+
+FAIL invalid referral code
+{
+    "success": false,
+    "error": "Invalid referral code",
+    "error_code": 405,
+    "id": 5,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj1@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10ZZrVANR8zXaOMF1AEWbVeV2kPtOW1YAhyHrf7dg85o0XwsBcjpZ",
+    "referral_code": "TN0000000005",
+    "is_referee": 1,
+    "promo_count": 1
+}
+
+FAIL when you try to apply your referral code. /* not possible in device side testing (only possible at postman) */
+{
+    "success": false,
+    "error": "Sorry, You can't apply your refereel code.",
+    "error_code": 405,
+    "id": 5,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj1@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10ZZrVANR8zXaOMF1AEWbVeV2kPtOW1YAhyHrf7dg85o0XwsBcjpZ",
+    "referral_code": "TN0000000005",
+    "is_referee": 1,
+    "promo_count": 1
+}
+
+FAIL try to apply referral code two times. /* not possible in device side testing (only possible at postman) */
+{
+    "success": false,
+    "error": "Sorry, You have apready apply the refereel code.",
+    "error_code": 405,
+    "id": 5,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj1@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10ZZrVANR8zXaOMF1AEWbVeV2kPtOW1YAhyHrf7dg85o0XwsBcjpZ",
+    "referral_code": "TN0000000005",
+    "is_referee": 1,
+    "promo_count": 1
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/provider_list                                                            (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+usr_lat             user current latitude
+user_long           user current longitude
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "walker_list": [
+        {
+            "id": 1,
+            "first_name": "Tirthrajsinh",
+            "last_name": 1,
+            "phone": "+919876543210",
+            "email": "tirthrajsinh.007@gmail.com",
+            "bio": "",
+            "address": "",
+            "state": "",
+            "country": "",
+            "zipcode": "",
+            "latitude": 1,
+            "longitude": 2,
+            "type": 1,
+            "car_model": "0",
+            "car_number": "0",
+            "bearing": 4439.63828765
+        }
+    ]
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/payment_type                                                           (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
+cash_or_card        1=cash,0=card                                       (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 6,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthrajsinh108@live.com",
+    "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+    "bio": "my new bio",
+    "address": "Gondal city",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10y0tPcsmz8f242fQrIA59cml5TvIth1mVAqPAIVg0N7xIZkZu",
+    "default_card_id": 5,
+    "payment_type": "1",
+    "is_referee": 0,
+    "promo_count": 0,
+    "payments": [
+        {
+            "is_default_text": "default",
+            "id": 5,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnKNeo4oaRMn",
+            "last_four": "4242",
+            "card_token": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "card_type": "VISA",
+            "card_id": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "is_default": 1
+        },
+        {
+            "is_default_text": "not_default",
+            "id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "card_id": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "is_default": 0
+        }
+    ],
+    "unique_id": 3
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/card_selection                                                         (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+default_card_id     your card's unique id                               (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 6,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthrajsinh108@live.com",
+    "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+    "bio": "my new bio",
+    "address": "Gondal city",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10y0tPcsmz8f242fQrIA59cml5TvIth1mVAqPAIVg0N7xIZkZu",
+    "default_card_id": "6",
+    "payment_type": null,
+    "is_referee": 0,
+    "promo_count": 0,
+    "payments": [
+        {
+            "is_default_text": "default",
+            "id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "is_default": 1
+        },
+        {
+            "is_default_text": "not_default",
+            "id": 5,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnKNeo4oaRMn",
+            "last_four": "4242",
+            "card_token": "card_16LSdPFZNNWvW0BCJnh0S6xV",
+            "card_type": "VISA",
+            "is_default": 0
+        }
+    ]
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/apply-promo                                                            (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+promo_code          Promotional code.                                   (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TRUE if Promotional code is successfully applied.
+{
+    "success": true,
+    "error": "Promotional code successfully applied.",
+    "id": 9,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10XzcEdyLpcdcOjJ0HlSMwYud1ykB0WWc3IcVQPB4sOhdUtQHgxBxC",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 1,
+    "request_id": 17
+}
+FAIL if one Promotional code is applied two times by user.
+{
+    "success": false,
+    "error": "Sorry, Promotional code already used by you.",
+    "error_code": 405,
+    "id": 9,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10XzcEdyLpcdcOjJ0HlSMwYud1ykB0WWc3IcVQPB4sOhdUtQHgxBxC",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 1,
+    "request_id": 17
+}
+FALSE if Promotional Code is invalid or not found in database.
+{
+    "success": false,
+    "error": "Invalid Promotional Code",
+    "error_code": 405,
+    "id": 9,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919998106007",
+    "email": "tirthraj@live.com",
+    "picture": "",
+    "bio": "fasdf",
+    "address": "Gondal",
+    "state": "Gujarat",
+    "country": "India",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10XzcEdyLpcdcOjJ0HlSMwYud1ykB0WWc3IcVQPB4sOhdUtQHgxBxC",
+    "referral_code": "x4e$QP",
+    "is_referee": 0,
+    "promo_count": 0,
+    "request_id": 17
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user/rating                                                                 (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id
+comment             comment
+rating              rating between 0 to 5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+{
+    "success": false,
+    "error": "Walk is not completed",
+    "error_code": 409
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROVIDER APP RESPONSES
+===================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/provider/register                                                          (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+first_name              first name                                      (REQUIRED)
+last_name               last name                                       (REQUIRED)
+email                   email                                           (REQUIRED)
+phone                   phone                                           (REQUIRED)
+password                password                                        (REQUIRED)
+type                    selected service type                           (REQUIRED)
+picture                 user image
+device_token            device token                                    (REQUIRED)
+device_type             device type                                     (REQUIRED)
+bio                     bio
+address                 address
+state                   state
+country                 country
+zipcode                 zipcode
+login_by                manual,facebook,google                          (REQUIRED)
+car_model               car model
+car_number              car number
+social_unique_id        social unique id
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 5,
+    "first_name": "My Name",
+    "last_name": "Last Name",
+    "phone": "+919876543210",
+    "email": "tirthraj123@yahoo.com",
+    "picture": "",
+    "bio": "my bio",
+    "address": "My Address",
+    "state": "Gujata",
+    "country": "India",
+    "zipcode": "3603311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "device token",
+    "device_type": "android",
+    "token": "2y10OGbxqRgtj9T8Er34pLFVeHs1jBdlbYhsY1cc1IpZC1yGdc35mhK",
+    "timezone": "UTC",
+    "car_model": "Car Model",
+    "car_number": "my06G3876",
+    "type": "1",
+    "is_approved": 0,
+    "is_approved_txt": "Decline",
+    "is_available": 0
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/login                                                              (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+email                   email                                           (REQUIRED)
+password                password(if manual login)			(REQUIRED)
+device_token            device token					(REQUIRED)
+device_type             android,ios					(REQUIRED)
+login_by                manual,facebook,google				(REQUIRED)	
+social_unique_id        social unique id if login by is not manual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 1,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919876543210",
+    "email": "tirthrajsinh.007@gmail.com",
+    "picture": "",
+    "bio": "",
+    "address": "",
+    "state": "",
+    "country": "",
+    "zipcode": "",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "device token",
+    "device_type": "android",
+    "token": "2y10LAeYihXjUuMs6RDGIl8MCONcv06jvwfnTNAeAVn52VYUbMjlgQhNy",
+    "type": 1,
+    "timezone": "Asia/Kolkata",
+    "is_approved": 1,
+    "car_model": "0",
+    "car_number": "0",
+    "is_approved_txt": "Approved",
+    "is_available": 1
+}
+{
+    "success": false,
+    "error": "Not a Registered User",
+    "error_code": 404
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/respondrequest                                                     (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+request_id          request id                                          (REQUIRED)
+accepted            1 = accept,0 = reject                               (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/getrequests                                                        (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_approved": 1,
+    "is_approved_txt": "Approved",
+    "is_available": 1,
+    "incoming_requests": [
+        {
+            "request_id": 18,
+            "request_services": "1",
+            "type": [
+                {
+                    "name": "Standard",
+                    "price": 0
+                }
+            ],
+            "time_left_to_respond": 51,
+            "later": 0,
+            "datetime": "2015-07-06 20:54:47",
+            "request_data": {
+                "owner": {
+                    "name": "Tirthrajsinh Parmar",
+                    "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+                    "phone": "+919998106007",
+                    "address": "Gondal city",
+                    "latitude": 1,
+                    "longitude": 2,
+                    "dest_latitude": 2,
+                    "dest_longitude": 1,
+                    "d_latitude": 2,
+                    "d_longitude": 1,
+                    "rating": 0,
+                    "num_rating": 0,
+                    "payment_type": 1
+                },
+                "payment_mode": 1,
+                "dog": []
+            }
+        }
+    ]
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/getrequest                                                        	(GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_available": 1,
+    "is_approved": 1,
+    "is_approved_txt": "Approved",
+    "request": {
+        "is_walker_started": 0,
+        "is_walker_arrived": 0,
+        "is_started": 0,
+        "is_completed": 0,
+        "is_dog_rated": 0,
+        "is_cancelled": 0,
+        "dest_latitude": 2,
+        "dest_longitude": 1,
+        "accepted_time": "2015-07-06 15:26:00",
+        "payment_mode": 1,
+        "payment_type": 1,
+        "promo_discount": 5,
+        "owner": {
+            "name": "Tirthrajsinh Parmar",
+            "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+            "phone": "+919998106007",
+            "address": "Gondal city",
+            "latitude": 1,
+            "longitude": 2,
+            "d_latitude": 2,
+            "d_longitude": 1,
+            "owner_dist_lat": 2,
+            "owner_dist_long": 1,
+            "dest_latitude": 2,
+            "dest_longitude": 1,
+            "rating": 0,
+            "num_rating": 0
+        },
+        "dog": [],
+        "bill": [],
+        "card_details": {
+            "is_default_text": "default",
+            "card_id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "is_default": 1
+        },
+        "charge_details": {
+            "unit": "kms",
+            "base_distance": 1,
+            "base_price": 10,
+            "distance_price": 4,
+            "price_per_unit_time": 1.2,
+            "total": 0,
+            "is_paid": 0
+        }
+    },
+    "bill": []
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/location                                                           (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_active": 1,
+    "is_approved": 1,
+    "is_active_txt": "active"
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestinprogress                                                  (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "request_id": 18,
+    "is_approved": 1,
+    "is_available": 1,
+    "is_approved_txt": "Approved",
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestwalkerstarted                                               (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestwalkerarrived                                               (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestwalkstarted                                                 (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+request/location                                                            (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "dest_latitude": 2,
+    "dest_longitude": 1,
+    "payment_type": 1,
+    "is_cancelled": 0,
+    "distance": 0.000015720755489667,
+    "unit": "kms",
+    "time": 6.25
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestwalkcompleted                                               (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+latitude            provider latitude                                   (REQUIRED)
+longitude           provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
+distance            total calculated distance                           (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "total": 24.940000534058,
+    "error": "Payment By cash",
+    "currency": "$",
+    "is_paid": 1,
+    "request_id": "18",
+    "status": 1,
+    "confirmed_walker": 1,
+    "is_walker_started": 1,
+    "is_walker_arrived": 1,
+    "is_walk_started": 1,
+    "is_completed": 1,
+    "is_walker_rated": 0,
+    "walker": {
+        "first_name": "Tirthrajsinh",
+        "last_name": "Parmar",
+        "phone": "+919876543210",
+        "bio": "",
+        "picture": "",
+        "latitude": 1.0000011,
+        "longitude": 2.0000011,
+        "type": 1,
+        "rating": 0,
+        "num_rating": 0,
+        "car_model": "0",
+        "car_number": "0"
+    },
+    "payment_mode": 1,
+    "bill": {
+        "payment_mode": 1,
+        "distance": "1.7607399902344",
+        "unit": "kms",
+        "time": 14.08,
+        "base_price": 10,
+        "distance_cost": 3.039999961853,
+        "time_cost": 16.9,
+        "walker": {
+            "email": "tirthrajsinh.007@gmail.com",
+            "amount": "0"
+        },
+        "admin": {
+            "email": "admin",
+            "amount": 29.940000534058
+        },
+        "currency": "$",
+        "actual_total": 29.938959869385,
+        "total": 24.940000534058,
+        "is_paid": 1,
+        "promo_discount": 5,
+        "main_total": 29.940000534058,
+        "referral_bonus": 0,
+        "promo_bonus": 5,
+        "payment_type": 1,
+        "type": [
+            {
+                "name": "Standard",
+                "price": 0
+            }
+        ]
+    },
+    "owner": {
+        "name": "Tirthrajsinh Parmar",
+        "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+        "phone": "+919998106007",
+        "address": "Gondal city",
+        "bio": "my new bio",
+        "latitude": 1,
+        "longitude": 2,
+        "owner_dist_lat": 2,
+        "owner_dist_long": 1,
+        "dest_latitude": 2,
+        "dest_longitude": 1,
+        "payment_type": 1,
+        "rating": 0,
+        "num_rating": 0
+    },
+    "payment_option": 1,
+    "request": {
+        "request_id": "18",
+        "status": 1,
+        "confirmed_walker": 1,
+        "is_walker_started": 1,
+        "is_walker_arrived": 1,
+        "is_started": 1,
+        "is_walk_started": 1,
+        "is_completed": 1,
+        "is_dog_rated": 0,
+        "is_cancelled": 0,
+        "is_walker_rated": 0,
+        "dest_latitude": 2,
+        "dest_longitude": 1,
+        "accepted_time": "2015-07-06 09:56:00",
+        "payment_type": 1,
+        "distance": "1.7607399902344",
+        "unit": "kms",
+        "end_time": "2015-07-06 10:51:35",
+        "owner": {
+            "name": "Tirthrajsinh Parmar",
+            "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+            "phone": "+919998106007",
+            "address": "Gondal city",
+            "bio": "my new bio",
+            "latitude": 1,
+            "longitude": 2,
+            "owner_dist_lat": 2,
+            "owner_dist_long": 1,
+            "dest_latitude": 2,
+            "dest_longitude": 1,
+            "payment_type": 1,
+            "rating": 0,
+            "num_rating": 0
+        },
+        "dog": [],
+        "bill": {
+            "payment_mode": 1,
+            "distance": "1.7607399902344",
+            "unit": "kms",
+            "time": 14.08,
+            "base_price": 10,
+            "distance_cost": 3.039999961853,
+            "time_cost": 16.9,
+            "walker": {
+                "email": "tirthrajsinh.007@gmail.com",
+                "amount": "0"
+            },
+            "admin": {
+                "email": "admin",
+                "amount": 29.940000534058
+            },
+            "currency": "$",
+            "actual_total": 29.938959869385,
+            "total": 24.940000534058,
+            "is_paid": 1,
+            "promo_discount": 5,
+            "main_total": 29.940000534058,
+            "referral_bonus": 0,
+            "promo_bonus": 5,
+            "payment_type": 1,
+            "type": [
+                {
+                    "name": "Standard",
+                    "price": 0
+                }
+            ]
+        },
+        "card_details": {
+            "is_default_text": "default",
+            "card_id": 6,
+            "owner_id": 6,
+            "customer_id": "cus_6YZnw1AjvWPuCF",
+            "last_four": "1111",
+            "card_token": "card_16LSe3FZNNWvW0BCA3h2J2Xu",
+            "card_type": "VISA",
+            "is_default": 1
+        },
+        "charge_details": {
+            "unit": "kms",
+            "base_price": 10,
+            "distance_price": 3.039999961853,
+            "price_per_unit_time": 16.89999961853,
+            "total": 29.940000534058,
+            "is_paid": 1
+        },
+        "payment_option": 1
+    }
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/rating                                                             (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+comment             provider latitude                                   (REQUIRED)
+rating              provider longitude                                  (REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/history                                                            (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+id                  user unique id					(REQUIRED)
+token               token given from server                             (REQUIRED)
+from_date           2015-06-29                                          (OPTIONAL)
+to_date             2015-07-01                                          (OPTIONAL)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "requests": [
+        {
+            "id": 18,
+            "date": "2015-07-06 09:56:00",
+            "distance": "1.7599999904633",
+            "unit": "kms",
+            "time": 14.079999923706,
+            "base_distance": 1,
+            "currency": "$",
+            "base_price": 10,
+            "distance_cost": 3.039999961853,
+            "time_cost": 16.89999961853,
+            "walker": {
+                "email": "tirthrajsinh.007@gmail.com",
+                "amount": "0"
+            },
+            "admin": {
+                "email": "admin",
+                "amount": 29.940000534058
+            },
+            "total": 24.940000534058,
+            "start_lat": 1.0000011,
+            "start_long": 2.0000011,
+            "end_lat": 1.0000011,
+            "end_long": 2.0000011,
+            "map_url": "https://maps-api-ssl.google.com/maps/api/staticmap?size=249x249&scale=2&markers=shadow:true|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-start@2x.png|1.0000011,2.0000011&markers=shadow:false|scale:2|icon:http://d1a3f4spazzrp4.cloudfront.net/receipt-new/marker-finish@2x.png|1.0000011,2.0000011&path=color:0x2dbae4ff|weight:4|1.0000011,2.0000011|1.0000012,2.0000012|1.0001012,2.0001012|1.0002012,2.0002012|1.0012012,2.0012012|1.0112012,2.0112012|1.0112012,2.0112012|1.0112012,2.0112012|1.0000011,2.0000011|1.0000011,2.0000011|1.0000011,2.0000011",
+            "main_total": 29.940000534058,
+            "referral_bonus": 0,
+            "promo_bonus": 5,
+            "payment_type": 1,
+            "is_paid": 1,
+            "promo_id": 1,
+            "promo_code": "1234",
+            "owner": {
+                "first_name": "Tirthrajsinh",
+                "last_name": "Parmar",
+                "phone": "+919998106007",
+                "email": "tirthrajsinh108@live.com",
+                "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/3ff4c23eb10a044300cb48cc52dd6f7f1797a8b3.png",
+                "bio": "my new bio",
+                "payment_opt": 1
+            }
+        }
+    ]
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/requestpath                                                        (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+request_id          request id                                          (REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_active": 1,
+    "is_approved": 1,
+    "locationdata": [
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0,
+            "bearing": 0.00000977,
+            "timestamp": {
+                "date": "2015-07-06 10:28:32",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000012,
+            "longitude": 2.0000012,
+            "distance": 0.000016000000759959,
+            "bearing": 0.00000977,
+            "timestamp": {
+                "date": "2015-07-06 10:34:47",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0001012,
+            "longitude": 2.0001012,
+            "distance": 0.015737000465393,
+            "bearing": 0.00977051,
+            "timestamp": {
+                "date": "2015-07-06 10:35:23",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0002012,
+            "longitude": 2.0002012,
+            "distance": 0.031458000183105,
+            "bearing": 0.00977051,
+            "timestamp": {
+                "date": "2015-07-06 10:35:38",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0012012,
+            "longitude": 2.0012012,
+            "distance": 0.18866600036621,
+            "bearing": 0.09770512,
+            "timestamp": {
+                "date": "2015-07-06 10:35:48",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0.97705038,
+            "timestamp": {
+                "date": "2015-07-06 10:35:59",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:36:48",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0112012,
+            "longitude": 2.0112012,
+            "distance": 1.7607399902344,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:43:47",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 1.0943063,
+            "timestamp": {
+                "date": "2015-07-06 10:46:56",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:51:01",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "latitude": 1.0000011,
+            "longitude": 2.0000011,
+            "distance": 0.0017610000371933,
+            "bearing": 0,
+            "timestamp": {
+                "date": "2015-07-06 10:51:35",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/checkstate                                                         (GET)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_active": 1
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/togglestate                                                        (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "is_active": 1
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/logout                                                             (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "error": "Successfully Log-Out"
+}
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+provider/update                                                             (POST)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parameters
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+token               token given from server                             (REQUIRED)
+id                  user unique id					(REQUIRED)
+new_password        new password
+old_password        old password
+first_name          first name
+last_name           last name
+phone               contact number
+picture             user multi-part image
+bio                 bio
+address             address
+state               state
+country             country
+zipcode             zip-code
+car_model           car model
+car_number          car number
+timezone            timezone like UTC,Asia/Kolkata, etc
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{
+    "success": true,
+    "id": 1,
+    "first_name": "Tirthrajsinh",
+    "last_name": "Parmar",
+    "phone": "+919033515182",
+    "email": "tirthrajsinh.007@gmail.com",
+    "picture": "http://192.168.0.26/uberforx_new/api/public/uploads/f753952a167dd5af4f13d2eb984aed0c1343edac.png",
+    "bio": "NEW BIO",
+    "address": "GONDAL",
+    "state": "GUJARAT",
+    "country": "INDIA",
+    "zipcode": "360311",
+    "login_by": "manual",
+    "social_unique_id": "",
+    "device_token": "0",
+    "device_type": "android",
+    "token": "2y10LAeYihXjUuMs6RDGIl8MCONcv06jvwfnTNAeAVn52VYUbMjlgQhNy",
+    "timezone": "UTC",
+    "type": 1,
+    "car_model": "0",
+    "car_number": "0"
+}

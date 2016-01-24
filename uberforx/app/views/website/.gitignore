@@ -1,0 +1,12 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!index.blade.php
+!layout.blade.php
+!page_generic.blade.php
+!termsandconditions.blade.php
+!track_ride.blade.php
+!banking_provider_stripe.blade.php
+!banking_provider_braintree.blade.php
+!banking_done.blade.php

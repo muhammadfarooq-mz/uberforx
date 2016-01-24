@@ -1,0 +1,61 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"laravel/framework": "4.2.*",
+		"aws/aws-sdk-php-laravel": "1.*",
+		"stripe/stripe-php": "1.*",
+		"twilio/sdk": "dev-master",
+		"braintree/braintree_php" : "2.34.0",
+        "davibennun/laravel-push-notification": "dev-master",
+		"monolog/monolog": "~1.11",
+		"behat/behat": "3.0.*@dev",
+        "phpspec/phpspec": "2.1.*@dev",
+        "phpunit/phpunit": "4.6.*@dev",
+        "behat/mink": "1.6.*@dev",
+        "behat/mink-extension": "2.0.*@dev",
+        "behat/mink-selenium2-driver": "1.2.*@dev",
+        "behat/mink-goutte-driver": "1.1.*@dev",
+        "coinbase/coinbase": "dev-master",
+        "paypal/rest-api-sdk-php": "*",
+        "paypal/adaptivepayments-sdk-php":"2.*",
+		"florianv/swap": "~2.0",
+		"intervention/image": "~2.1"
+	},
+	"require-dev": {
+		"way/generators": "2.*",
+		"raahul/larryfour": "dev-master",
+		"barryvdh/laravel-debugbar": "1.*",
+		"barryvdh/laravel-ide-helper": "1.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}

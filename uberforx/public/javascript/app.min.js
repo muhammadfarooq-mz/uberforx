@@ -1,0 +1,11 @@
+/*! ========================================================================
+ * App.js v1.0.0
+ * Copyright 2014 pampersdry
+ * ========================================================================
+ *
+ * pampersdry@gmail.com
+ *
+ * This script will be use in my other projects too.
+ * Your support ensure the continuity of this script and it projects.
+ * ======================================================================== */
+if("undefined"==typeof jQuery)throw new Error("This application requires jQuery");var APP={init:function(){$("html").Core()},sidebarSparklines:{init:function(){$("aside .sidebar-sparklines").sparkline("html",{enableTagOptions:!0})}},headerDropdown:{init:function(a){function b(b){var c=$(b.target),d=c.find(".media-list"),e=c.find(".indicator");e.addClass("animation animating fadeInDown").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){$(this).removeClass("animation animating fadeInDown")}),$.ajax({url:a.url,cache:!1,type:"POST",dataType:"json"}).done(function(a){var b=c.find(".mustache-template").html(),f=Mustache.render(b,a);e.addClass("hide"),c.find(".count").html("("+a.data.length+")"),d.prepend(f),d.find(".media.new").each(function(){$(this).addClass("animation animating flipInX").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){$(this).removeClass("animation animating flipInX")})})})}$(a.dropdown).one("shown.bs.dropdown",b)}}};$(function(){APP.init(),APP.sidebarSparklines.init(),APP.headerDropdown.init({dropdown:"#header-dd-message",url:"server/message.php"}),APP.headerDropdown.init({dropdown:"#header-dd-notification",url:"server/notification.php"})});

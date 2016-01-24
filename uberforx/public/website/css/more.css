@@ -1,0 +1,22 @@
+body {
+  background-image: url(../img/grey.jpg);
+  background-attachment: fixed;
+  font-family: "Open Sans", Tahoma, Arial, Verdana;
+}
+
+.trans-blk{ 
+  background: rgba(0, 0, 0, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+  padding: 20px;
+  padding-top: 10px;
+  color: #DADADA;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}
+
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}

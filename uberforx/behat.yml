@@ -1,0 +1,9 @@
+default:
+    suites:
+        functional:
+            paths: [ %paths.base%/features/functional ]
+            contexts: [ LaravelFeatureContext ]
+    extensions:
+        Behat\MinkExtension:
+            goutte: ~
+            base_url: http://localhost:8000

@@ -1,0 +1,194 @@
+.btn-default {
+  color: #ffffff;
+  background-color: #;
+}
+.navbar-nav > li {
+  float: left;
+}
+.btn-info{
+    color: #000;
+    background: #fff;
+    border-radius: 0px;
+    border:1px solid #;
+}
+.nav-admin .dropdown :hover, .nav-admin .dropdown :hover {
+    background: #;
+    color: #000;
+}
+.navbar-nav > li > a {
+  border-radius: 0px;
+}
+.navbar-nav > li + li {
+  margin-left: 2px;
+}
+.navbar-nav > li.active > a,
+.navbar-nav> li.active > a:hover,
+.navbar-nav > li.active > a:focus {
+  color: #ffffff;
+  background-color: #!important;
+}
+.logo_img_login{
+border-radius: 30px;border: 4px solid #;
+}
+.btn-success {
+  color: #ffffff;
+  background-color: #;
+  border-color: #;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #ffffff;
+  background-color: #;
+  border-color: #;
+
+}
+
+
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+
+  background-color: #;
+  border-color: #;
+}
+.btn-success .badge {
+  color: #;
+  background-color: #ffffff;
+}
+.btn-info {
+  color: #ffffff;
+  background-color: #;
+  border-color: #;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #000;
+  background-color: #FFFF;
+  border-color: #;
+}
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #;
+  border-color: #;
+}
+.btn-info .badge {
+  color: #;
+  background-color: #029acf;
+  border-color: #029acf;
+}
+.btn-success,
+.btn-success:hover {
+  background-image: -webkit-linear-gradient(# # 6%, #);
+  background-image: linear-gradient(#, # 6%, #);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#', endColorstr='#', GradientType=0);
+  filter: none;
+  border: 1px solid #;
+}
+.btn-info,
+.btn-info:hover {
+  background-image: -webkit-linear-gradient(#, # 6%, #);
+  background-image: linear-gradient(#, # 6%, #);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#', endColorstr='#', GradientType=0);
+  filter: none;
+  border: 1px solid #;
+}
+.logo h3{
+    margin: 0px;
+    color: #;
+}
+
+.second-nav{
+    background: #;
+}
+.login_back{background-color: #;}
+.no_radious:hover{background-image: -webkit-linear-gradient(#, # 6%, #);background-image: linear-gradient(#5d4dd1, #5d4dd1 6%, #5d4dd1);background-repeat: no-repeat;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5d4dd1', endColorstr='#5d4dd1', GradientType=0);filter: none;border: 1px solid #5d4dd1;}
+.navbar-nav li:nth-child(1) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(2) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(3) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(4) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(5) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(6) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(7) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(8) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(9) a{
+    background: #;
+}
+
+.navbar-nav li:nth-child(10) a{
+    background: #;
+}
+
+.navbar-nav li a:hover{
+    background: #;
+}
+.btn-green{
+
+    background: #;
+    color: #fff;
+}
+.btn-green:hover{
+    background: #;
+    color: #fff;
+}
